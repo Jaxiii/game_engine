@@ -10,4 +10,4 @@
 
 #include "game.h"
 
-Game::Game()
+Game::Game(std::string title, int width, int height)

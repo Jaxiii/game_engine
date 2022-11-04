@@ -15,6 +15,10 @@
 
 #include "state.h"
 
-class Game{};
+class Game
+{ 
+    private:
+        Game(std::string title, int width, int height);
+};
 
 class State;
