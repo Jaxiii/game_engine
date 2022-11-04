@@ -7,3 +7,14 @@
 //
 //
 //  MIT LICENSE
+
+#define SDL
+
+#include <string>
+#include <iostream>
+
+#include "state.h"
+
+class Game{};
+
+class State;
