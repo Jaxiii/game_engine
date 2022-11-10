@@ -8,7 +8,7 @@
 //
 //  MIT LICENSE
 
-#include "../include/internal/SDL_include.h"
+#include "../include/internal/SDL_include.hpp"
 #include "../include/internal/game.hpp"
 
 int main(int argc, char** argv) {

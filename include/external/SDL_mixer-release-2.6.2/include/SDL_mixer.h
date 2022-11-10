@@ -29,12 +29,12 @@
 #ifndef SDL_MIXER_H_
 #define SDL_MIXER_H_
 
-#include "SDL_stdinc.h"
-#include "SDL_rwops.h"
-#include "SDL_audio.h"
-#include "SDL_endian.h"
-#include "SDL_version.h"
-#include "begin_code.h"
+#include "../../SDL-release-2.24.2/include/SDL_stdinc.h"
+#include "../../SDL-release-2.24.2/include/SDL_rwops.h"
+#include "../../SDL-release-2.24.2/include/SDL_audio.h"
+#include "../../SDL-release-2.24.2/include/SDL_endian.h"
+#include "../../SDL-release-2.24.2/include/SDL_version.h"
+#include "../../SDL-release-2.24.2/include/begin_code.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -2777,7 +2777,7 @@ extern DECLSPEC void SDLCALL Mix_CloseAudio(void);
 #ifdef __cplusplus
 }
 #endif
-#include "close_code.h"
+#include "../../SDL-release-2.24.2/include/close_code.h"
 
 #endif /* SDL_MIXER_H_ */
 

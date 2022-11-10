@@ -29,9 +29,9 @@
 #ifndef SDL_IMAGE_H_
 #define SDL_IMAGE_H_
 
-#include "SDL.h"
-#include "SDL_version.h"
-#include "begin_code.h"
+#include "../SDL-release-2.24.2/include/SDL.h"
+#include "../SDL-release-2.24.2/include/SDL_version.h"
+#include "../SDL-release-2.24.2/include/begin_code.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -2168,6 +2168,6 @@ extern DECLSPEC IMG_Animation * SDLCALL IMG_LoadGIFAnimation_RW(SDL_RWops *src);
 #ifdef __cplusplus
 }
 #endif
-#include "close_code.h"
+#include "../SDL-release-2.24.2/include/close_code.h"
 
 #endif /* SDL_IMAGE_H_ */

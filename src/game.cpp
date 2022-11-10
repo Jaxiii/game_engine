@@ -54,16 +54,11 @@ Game::Game(std::string title, int width, int height) {
                 } else {
                     window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
                     if (window == nullptr) {
-                        cout << "Game: Falha na criação da janela" << endl;
-                    } else {
-                        cout << "Game: Window criada com sucesso!" << endl;
+                        cout << "[#5] Window Error -> nullptr" << endl;
                     }
-
                     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
                     if (renderer == nullptr) {
-                        cout << "Game: Falha na criação do renderer" << endl;
-                    }  else {
-                        cout << "Game: Renderer criado com sucesso!" << endl;
+                        cout << "[#6] Renderer Error -> nullptr" << endl;
                     }
                 }
             }
@@ -97,4 +92,6 @@ SDL_Renderer* Game::SDL_CreateRenderer(SDL_Window* window, int index, Uint32 fla
 }
 
 void Game::Run() {
+   while (!state->QuitRequested()) {
+   }
 }
