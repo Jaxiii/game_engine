@@ -19,9 +19,19 @@ class Game
 { 
     private:
         Game(std::string title, int width, int height);
+        static Game* instance;
+        SDL_Window* window;
+        SDL_Window* SDL_CreateWindow(const char* title, int x, int y, int w, int h, Uint32 flags);
+        SDL_Renderer* SDL_CreateRenderer(SDL_Window* window, int index, Uint32 flags);
+        SDL_Renderer* renderer;
+        State* state;
     
     public:
-        Game* instance;
+        ~Game();
+        static Game& GetInstance();
+        SDL_Renderer *GetRenderer();
+        State& GetState();
+        void Run();
 };
 
 class State;
