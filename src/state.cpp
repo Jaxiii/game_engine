@@ -1,12 +1,15 @@
-//  File:        game.cc
-//  Description: Game class file
-//  Rev:         A
-//  Created:     Fri. Nov 04, 2022, 18:48:14
-//  Author:      Bruno Sanguinetti
-//  mail:        brunoebarros@gmail.com
-//
-//
-//  MIT LICENSE
+//////////////////////////////////////////////////////////////////                    
+//  File:        state.cpp                                    ////
+//  Description: Game class file                              ////
+//  Rev:         A                                            ////
+//  Created:     Wed. Nov 10, 2022, 16:21:12                  ////
+//  Author:      Bruno Sanguinetti                            ////
+//  mail:        brunoebarros@gmail.com                       ////
+//                                                            ////
+//                                                            ////
+//  MIT LICENSE                                               ////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 
 #include <iostream>     
 
