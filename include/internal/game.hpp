@@ -13,7 +13,13 @@
 #include <string>
 #include <iostream>
 
-#include "../include/internal/state.hpp"
+
+#define INCLUDE_SDL
+#define INCLUDE_SDL_IMAGE
+#define INCLUDE_SDL_MIXER
+#define INCLUDE_SDL_TTF
+#include "SDL_include.hpp"
+#include "state.hpp"
 
 class Game
 { 
@@ -29,9 +35,7 @@ class Game
     public:
         ~Game();
         static Game& GetInstance();
-        SDL_Renderer *GetRenderer();
-        State& GetState();
+        SDL_Renderer* GetRenderer();
+        State* GetState();
         void Run();
 };
-
-class State;

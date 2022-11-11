@@ -1,20 +1,18 @@
-//  File:        game.cc
-//  Description: Game class file
-//  Rev:         A
-//  Created:     Fri. Nov 04, 2022, 18:48:14
-//  Author:      Bruno Sanguinetti
-//  mail:        brunoebarros@gmail.com
-//
-//
-//  MIT LICENSE
+//////////////////////////////////////////////////////////////////                    
+//  File:        game.cc                                      ////
+//  Description: Game class file                              ////
+//  Rev:         A                                            ////
+//  Created:     Fri. Nov 04, 2022, 18:48:14                  ////
+//  Author:      Bruno Sanguinetti                            ////
+//  mail:        brunoebarros@gmail.com                       ////
+//                                                            ////
+//                                                            ////
+//  MIT LICENSE                                               ////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 
 #include <iostream>     
 
-#define INCLUDE_SDL
-#define INCLUDE_SDL_IMAGE
-#define INCLUDE_SDL_MIXER
-#define INCLUDE_SDL_TTF
-#include "../include/internal/SDL_include.hpp"
 #include "../include/internal/game.hpp"
 
 using namespace std;
@@ -49,7 +47,7 @@ Game::Game(std::string title, int width, int height) {
             } else {
                 Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024);
                 Mix_AllocateChannels(32);
-                if (TTF_Init != 0) {
+                if (TTF_Init() != 0) {
                     cout << "[#4] TTF_init Error -> Return != 0" << endl;
                 } else {
                     window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
@@ -73,7 +71,7 @@ Game& Game::GetInstance() {
     }
     else
     {
-        Game::instance = new Game("Game", 1024, 600);
+        Game::instance = new Game("Bruno Sanguinetti - 180046063", 1024, 600);
         return *Game::instance;
     }
 }
@@ -82,7 +80,8 @@ SDL_Renderer* Game::GetRenderer() {
     return renderer;
 }
 
-State& Game::GetState() {
+State* Game::GetState() {
+    return state;
 }
 
 SDL_Window* Game::SDL_CreateWindow(const char* title, int x, int y, int w, int h, Uint32 flags){

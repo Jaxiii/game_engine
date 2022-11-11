@@ -1,4 +1,4 @@
-dep/game.d bin/game.o: src/game.cpp \
+dep/state.d bin/state.o: src/state.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -493,7 +493,7 @@ dep/game.d bin/game.o: src/game.cpp \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/SDL.h \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/begin_code.h \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/close_code.h \
-  src/../include/internal/game.hpp src/../include/internal/state.hpp
+  src/../include/internal/game.hpp include/../include/internal/state.hpp
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:
 
@@ -1485,4 +1485,4 @@ src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2
 
 src/../include/internal/game.hpp:
 
-src/../include/internal/state.hpp:
+include/../include/internal/state.hpp:

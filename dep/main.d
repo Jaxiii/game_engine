@@ -415,7 +415,8 @@ dep/main.d bin/main.o: src/main.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  include/../include/internal/state.hpp
+  include/../include/internal/state.hpp \
+  include/../include/internal/SDL_include.hpp
 
 src/../include/internal/SDL_include.hpp:
 
@@ -1250,3 +1251,5 @@ src/../include/internal/game.hpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h:
 
 include/../include/internal/state.hpp:
+
+include/../include/internal/SDL_include.hpp:
