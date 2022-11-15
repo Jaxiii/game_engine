@@ -63,16 +63,25 @@ Game::Game(string title, int width, int height) {               ///
             }////////////////////////////////////////////////////////
         }////////////////// ACHEI ESSE BLOCKAO BIZARRO //////////////
     }///// .~/T.T/~   ///////////////////////////////////////////////
+    state = new State();
 }////////////////////////// .       HELP        .//////  >.> ////////
 
+Game::~Game() {
+    Mix_Quit();
+    IMG_Quit();
+    Mix_CloseAudio();
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+}
 
 ////////// Aqui em baixo ta BONITINHO :3 //////////////////////////
-Game &Game::GetInstance() {
-    if (Game::instance != nullptr) {
-        return *Game::instance;
+Game& Game::GetInstance() {
+    if (instance != nullptr) {
+        return *instance;
     } else {
-        Game::instance = new Game("Bruno Sanguinetti - 180046063", 1024, 600);
-        return *Game::instance;
+        instance = new Game("Bruno Sanguinetti - 180046063", 1024, 600);
+        return *instance;
     }
 }
 
@@ -85,9 +94,11 @@ State& Game::GetState() {
 }
 
 void Game::Run() {
-    while (state->QuitRequested()!=true) {
-        state->Update(33);
-        state->Render();
-        SDL_RenderPresent(Game::GetInstance().GetRenderer());
+    State state = Game::GetState();
+    
+    while (state.QuitRequested()!=true) {
+        state.Update(33);
+        //Game::GetState().Render();
+        //SDL_RenderPresent((Game::GetInstance().GetRenderer()));
     }
 }

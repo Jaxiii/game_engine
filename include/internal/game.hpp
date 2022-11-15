@@ -7,6 +7,7 @@
 //
 //
 //  MIT LICENSE
+#pragma once
 
 #define SDL
 
