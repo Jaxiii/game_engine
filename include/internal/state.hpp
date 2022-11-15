@@ -8,10 +8,15 @@
 //
 //  MIT LICENSE
 
+#include "sprite.hpp"
+#include "music.hpp"
+
 class State { 
 
     private:
         bool quitRequested;
+        Sprite background;
+        Music music;
 
     public:
         State();

@@ -17,6 +17,8 @@
                                                                 ///
 using namespace std;                                            ///
                                                                 ///
+Game* Game::instance = nullptr;                                 ///
+                                                                ///
 Game::Game(string title, int width, int height) {               ///
                                                                 ///
     //Melhor colocar aqui ou criar um método de classe?           |        Errei :c
@@ -38,10 +40,10 @@ Game::Game(string title, int width, int height) {               ///
     //.........../// ......... //// .............|// ............../
     ////////////////////////////////////////////////////////////////
     else {
-        if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) != 0) {
+        if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0) {
         cout << "[#3] IMG_init Error -> Return != 0";
         } else {
-            if (Mix_Init(MIX_INIT_FLAC | MIX_INIT_OGG | MIX_INIT_MP3) != 0) {
+            if (Mix_Init(MIX_INIT_FLAC | MIX_INIT_OGG | MIX_INIT_MP3) == 0) {
                 cout << "[#3] Mix_init Error -> Return != 0";
             } else {
                 Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024);           ////
@@ -83,7 +85,9 @@ State& Game::GetState() {
 }
 
 void Game::Run() {
-   while (!state->QuitRequested()) {
-    SDL_Delay(32);
-   }
+    while (state->QuitRequested()!=true) {
+        state->Update(33);
+        state->Render();
+        SDL_RenderPresent(Game::GetInstance().GetRenderer());
+    }
 }
