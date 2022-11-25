@@ -20,7 +20,6 @@ Music::~Music() {
 
 void Music::Play(int times) {
     music != nullptr ? Mix_PlayMusic(music, times) : printf("Error - Music Play");
-    
 }
 
 void Music::Stop(int msToStop) {

@@ -25,20 +25,18 @@
 
 using namespace std;
 
-State::State() {
+State::State() : background(), music(){
     quitRequested = false;
-    LoadAssets();
-    music.Play(BACKGROUND_MUSIC_LOOP);
 }
 
 void State::LoadAssets() {
-    background.Open(BACKGROUND_SPRITE_PATH);
     music.Open(BACKGROUND_MUSIC_PATH);
+    music.Play(BACKGROUND_MUSIC_LOOP);
+    background.Open(BACKGROUND_SPRITE_PATH);
 }
 
 void State::Update(float delta_time) {
     if (SDL_QuitRequested() == true) quitRequested = true;
-    SDL_Delay(delta_time);
 }
 
 void State::Render() {

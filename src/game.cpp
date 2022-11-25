@@ -10,35 +10,22 @@
 ///  MIT LICENSE                                               ////
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
-                                                                ///
-#include <iostream>                                             ///
-#include <string>                                               ///
-#include "../include/internal/game.hpp"                         ///
-                                                                ///
-using namespace std;                                            ///
-                                                                ///
-Game* Game::instance = nullptr;                                 ///
-                                                                ///
-Game::Game(string title, int width, int height) {               ///
-                                                                ///
-    //Melhor colocar aqui ou criar um método de classe?           |        Errei :c
-    //separar as inicializacoes e verificacoes por lib.           ..       Mas, ficou bonito :D
-//  if(Game::instance != nullptr) {                               //
-//    cout << "[#1] Engine Error -> Instance != nullptr" << endl;  //
-//  } else {                                                      //
-//      Game::instance = this;                                    //
-//  }                                                             //
-                                                                  //
-    //Aqui também, será que eu modularizo tipo Game::SDL_Init     //  Aff
+                                                                
+#include <iostream>                                             
+#include <string>                                               
+#include "../include/internal/game.hpp"                         
+                                                                
+using namespace std;                                            
+                                                                
+Game* Game::instance = nullptr;                                 
+                                                                
+Game::Game(string title, int width, int height) {               
+                                                                
+
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0) {
         cout << "[#2] SDL_Init Error -> Return != 0";//////////////
     }///////////////////////////////////////////////////////////////
-    //// .          // .   .    ^^/// .   .///////// .            ./
-    ///.    ///////// .   ////   .// .    .////////////   ///   ////
-    ////--       ./// .  ////// . // .   .///////////// . ///   ////
-    //ˆˆˆˆˆˆ    ./// .  //// .  //// .    ˆˆˆˆˆˆˆ|/////   ///   ////
-    //.........../// ......... //// .............|// ............../
-    ////////////////////////////////////////////////////////////////
+
     else {
         if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0) {
         cout << "[#3] IMG_init Error -> Return != 0";
@@ -59,29 +46,29 @@ Game::Game(string title, int width, int height) {               ///
                     if (renderer == nullptr) {
                         cout << "[#6] Renderer Error -> nullptr" << endl;
                     }
-                }////////////////////////////////////////////////////
-            }////////////////////////////////////////////////////////
-        }////////////////// ACHEI ESSE BLOCKAO BIZARRO //////////////
-    }///// .~/T.T/~   ///////////////////////////////////////////////
+                }
+            }
+        }
+    }
     state = new State();
-}////////////////////////// .       HELP        .//////  >.> ////////
+}
 
 Game::~Game() {
-    Mix_Quit();
-    IMG_Quit();
-    Mix_CloseAudio();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    Mix_CloseAudio();
+    Mix_Quit();
+    IMG_Quit();
     SDL_Quit();
 }
 
 ////////// Aqui em baixo ta BONITINHO :3 //////////////////////////
 Game& Game::GetInstance() {
-    if (instance != nullptr) {
-        return *instance;
+    if (Game::instance != nullptr) {
+        return *Game::instance;
     } else {
-        instance = new Game("Bruno Sanguinetti - 180046063", 1024, 600);
-        return *instance;
+        Game::instance = new Game("Bruno Sanguinetti - 180046063", 1024, 600);
+        return *Game::instance;
     }
 }
 
@@ -94,11 +81,11 @@ State& Game::GetState() {
 }
 
 void Game::Run() {
-    State state = Game::GetState();
-    
-    while (state.QuitRequested()!=true) {
-        state.Update(33);
-        //Game::GetState().Render();
-        //SDL_RenderPresent((Game::GetInstance().GetRenderer()));
+    state->LoadAssets();
+    while (state->QuitRequested()!=true) {
+        state->Update(0.0);
+        state->Render();
+        SDL_RenderPresent(renderer);
+        SDL_Delay(33);
     }
 }
