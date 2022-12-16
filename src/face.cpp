@@ -17,9 +17,11 @@ void Face::Damage(int damage) {
 }
 
 void Face::Update(float delta_time) {
+    int new_x = InputManager::GetInstance().GetMouseX() - Camera::pos.x;
+    int new_y = InputManager::GetInstance().GetMouseY() - Camera::pos.y;
+    
     if (InputManager::GetInstance().MousePress(LEFT_MOUSE_BUTTON)) {
-        if (associated.box.Contains(InputManager::GetInstance().GetMouseX() - Camera::pos.x,
-                                    InputManager::GetInstance().GetMouseY() - Camera::pos.y)) {
+        if (associated.box.Contains(new_x, new_y)) {
             int damage = rand() % 10 + 10;
             Damage(damage);
         }

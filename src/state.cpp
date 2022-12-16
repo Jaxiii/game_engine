@@ -64,10 +64,18 @@ void State::Update(float delta_time){
     if ((InputManager::GetInstance().KeyPress(ESCAPE_KEY)) || (InputManager::GetInstance().QuitRequested()))
     quitRequested = true;
     
+
     if (InputManager::GetInstance().KeyPress(SPACEBAR_KEY)) {
-        Vec2 objPos = Vec2(200, 0).GetRotated(-PI + PI * (rand() % 1001) / 500.0) + Vec2(InputManager::GetInstance().GetMouseX(),
-                                                                                         InputManager::GetInstance().GetMouseY());
-        AddObject((int)objPos.x - Camera::pos.x, (int)objPos.y - Camera::pos.y);
+        int mouseX = InputManager::GetInstance().GetMouseX();
+        int mouseY = InputManager::GetInstance().GetMouseY();
+        float rotation = -PI + PI * (rand() % 1001) / 500.0;
+
+        Vec2 objPos = Vec2(200, 0).GetRotated(rotation) + Vec2(mouseX, mouseY);
+
+        int new_x = (int)objPos.x - Camera::pos.x;
+        int new_y = (int)objPos.y - Camera::pos.y;
+
+        AddObject(new_x, new_y);
     }
 
     for (int i = (int)objectArray.size() - 1; i >= 0; --i) {
