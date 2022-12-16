@@ -1,55 +1,58 @@
-///////////////////////////////////////////////////////////////////                    
-///  File:        game.cpp                                     ////
-///  Description: Game class file                              ////
-///  Rev:         A                                            ////
-///  Created:     Fri. Nov 04, 2022, 18:48:14                  ////
-///  Author:      Bruno Sanguinetti                            ////
-///  mail:        brunoebarros@gmail.com                       ////
-///                                                            ////
-///                                                            ////
-///  MIT LICENSE                                               ////
-///////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
-                                                                
-#include <iostream>                                             
-#include <string>                                               
-#include "../include/internal/game.hpp"                         
-                                                                
-using namespace std;                                            
-                                                                
-Game* Game::instance = nullptr;                                 
-                                                                
-Game::Game(string title, int width, int height) {               
-                                                                
+#include <string>
+#include <iostream>
 
-    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0) {
-        cout << "[#2] SDL_Init Error -> Return != 0";
+#include "../include/internal/game.hpp"
+
+#define WINDOW_FLAGS 0
+
+#define WINDOW_WIDTH 1024
+#define WINDOW_HEIGHT 600
+#define WINDOW_TITLE "Bruno Sanguinetti - 180046063"
+#define AUDIO_CHUNKSIZE 1024
+#define AUDIO_FREQUENCY MIX_DEFAULT_FREQUENCY
+#define AUDIO_FORMAT MIX_DEFAULT_FORMAT
+#define AUDIO_CHANNELS MIX_DEFAULT_CHANNELS
+#define SOUND_RESOLUTION 32
+
+using namespace std;
+
+Game *Game::instance = nullptr;
+
+Game::Game(string title, int width, int height) {
+    int SDL_ERROR;
+    int IMG_ERROR;
+    int MSC_ERROR;
+
+    if (Game::instance != nullptr) {
+        cout << "Error - Game instance not null";
+    } else {
+        Game::instance = this;
     }
 
-    else {
-        if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0) {
-        cout << "[#3] IMG_init Error -> Return != 0";
+    SDL_ERROR = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER);
+    if (SDL_ERROR != 0) {
+        cout << "Error - SDL_Init";
+    } else {
+        IMG_ERROR = IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF);
+        if (IMG_ERROR == 0) {
+            cout << "Error - IMG_Init";
         } else {
-            if (Mix_Init(MIX_INIT_FLAC | MIX_INIT_OGG | MIX_INIT_MP3) == 0) {
-                cout << "[#3] Mix_init Error -> Return != 0";
+            MSC_ERROR = Mix_Init(MIX_INIT_FLAC | MIX_INIT_OGG | MIX_INIT_MP3);
+            if (MSC_ERROR == 0) {
+                cout << "Error -Mix_Init";
             } else {
-                Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024);           ////
-                Mix_AllocateChannels(32);                                                                       ////
-                if (TTF_Init() != 0) {                                                                          //// . QUE ISSO?
-                    cout << "[#4] TTF_init Error -> Return != 0" << endl;                                       //// .    
-                } else {                                                                                        ////
-                    window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0); // <,<
-                    if (window == nullptr) {                                                                    ////
-                        cout << "[#5] Window Error -> nullptr" << endl;                                         ////  ^-^ Feião...
-                    }
-                    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
-                    if (renderer == nullptr) {
-                        cout << "[#6] Renderer Error -> nullptr" << endl;
-                    }
-                }
+                Mix_OpenAudio(AUDIO_FREQUENCY, AUDIO_FORMAT, AUDIO_CHANNELS, AUDIO_CHUNKSIZE);
+                Mix_AllocateChannels(SOUND_RESOLUTION);
+                
+                window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, WINDOW_FLAGS);
+                if (window == nullptr) cout << "Error - SDL_CreateWindow" << endl;
+                
+                renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
+                if (renderer == nullptr) cout << "Error - SDL_CreateRenderer" << endl;
+                
             }
         }
-    }
+    } 
     state = new State();
 }
 
@@ -62,28 +65,27 @@ Game::~Game() {
     SDL_Quit();
 }
 
-////////// Aqui em baixo ta BONITINHO :3 //////////////////////////
-Game& Game::GetInstance() {
+Game &Game::GetInstance(){
     if (Game::instance != nullptr) {
         return *Game::instance;
     } else {
-        Game::instance = new Game("Bruno Sanguinetti - 180046063", 1024, 600);
+        Game::instance = new Game(WINDOW_TITLE, WINDOW_WIDTH, WINDOW_HEIGHT);
         return *Game::instance;
     }
 }
 
-SDL_Renderer* Game::GetRenderer() {
-    return renderer;
-}
-
-State& Game::GetState() {
+State &Game::GetState() {
     return *state;
 }
 
+SDL_Renderer *Game::GetRenderer() {
+    return renderer;
+}
+
 void Game::Run() {
-    while (state->QuitRequested()!=true) {
+    while (state->QuitRequested() != true) {   
         state->Update(33);
         state->Render();
-        SDL_RenderPresent(renderer);
+        SDL_RenderPresent(Game::GetInstance().GetRenderer());
     }
 }

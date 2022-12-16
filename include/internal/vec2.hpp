@@ -1,15 +1,13 @@
-#ifndef _VEC_H_
-#define _VEC_H_
+#pragma once
 
-#include <iostream>
+#include <memory>
 
 class Vec2 {
-public:
-  float x, y;
-  Vec2();
-  Vec2(float x, float y);
-  Vec2 GetRotated(float theta);
-  Vec2 operator+(const Vec2 &other) const;
-};
 
-#endif
+  public:
+    Vec2(int x, int y);
+    Vec2 GetRotated(float theta);
+    float x, y;
+    Vec2 operator+(const Vec2 &other) const;
+    
+};

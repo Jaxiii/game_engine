@@ -1,14 +1,8 @@
 #pragma once
 
-class GameObject;
-#ifndef _GAME_OBJECT_H_
-#define _GAME_OBJECT_H_
-
-
 #include <iostream>
-#include <memory>
 #include <vector>
-
+#include <string>
 #include "rect.hpp"
 #include "component.hpp"
 
@@ -17,6 +11,7 @@ using namespace std;
 class Component;
 
 class GameObject {
+
   public:
     GameObject();
     ~GameObject();
@@ -32,6 +27,5 @@ class GameObject {
   private:
     vector<shared_ptr<Component>> components;
     bool isDead;
-};
 
-#endif
+};

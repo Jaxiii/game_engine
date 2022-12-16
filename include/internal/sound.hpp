@@ -9,21 +9,24 @@
 #include "game_object.hpp"
 #include "component.hpp"
 
-class Sound : public Component
-{
-public:
-  Sound(GameObject &associated);
-  Sound(GameObject &associated, std::string file);
-  ~Sound();
-  void Play(int times = 1);
-  void Stop();
-  void Open(std::string file);
-  bool IsOpen();
-  void Update(float dt);
-  void Render();
-  bool Is(std::string type);
+using namespace std;
 
-private:
-  Mix_Chunk *chunk;
-  int channel;
+class Sound : public Component {
+
+  public:
+    Sound(GameObject &associated);
+    Sound(GameObject &associated, string file);
+    ~Sound();
+    void Play(int times = 1);
+    void Stop();
+    void Open(string file);
+    bool IsOpen();
+    void Update(float delta_time);
+    void Render();
+    bool Is(string type);
+
+  private:
+    Mix_Chunk *chunk;
+    int channel;
+
 };
