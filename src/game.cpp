@@ -3,6 +3,7 @@
 
 #include "../include/internal/game.hpp"
 #include "../include/internal/resources.hpp"
+#include "../include/internal/input_manager.hpp"
 
 #define WINDOW_FLAGS 0
 
@@ -83,9 +84,21 @@ SDL_Renderer *Game::GetRenderer() {
     return renderer;
 }
 
+void Game::CalculateDeltaTime() {
+    int instTime = SDL_GetTicks();
+    delta_time = (instTime - frameStart) / 1000.0; 
+    frameStart = instTime;
+}
+
+float Game::GetDeltaTime() {
+    return delta_time;
+}
+
 void Game::Run() {
-    while (state->QuitRequested() != true) {   
-        state->Update(33);
+    while (state->QuitRequested() != true) {  
+        CalculateDeltaTime(); 
+        InputManager::GetInstance().Update();
+        state->Update(delta_time);
         state->Render();
         SDL_RenderPresent(Game::GetInstance().GetRenderer());
     }

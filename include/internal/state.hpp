@@ -11,6 +11,7 @@
 #include "music.hpp"
 #include "tile_map.hpp"
 #include "tile_set.hpp"
+#include "camera_follower.hpp"
 
 using namespace std;
 

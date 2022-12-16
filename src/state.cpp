@@ -2,7 +2,8 @@
 #include "../include/internal/game_object.hpp"
 #include "../include/internal/face.hpp"
 #include "../include/internal/vec2.hpp"
-
+#include "../include/internal/input_manager.hpp"
+#include "../include/internal/camera.hpp"
 #define PI 3.141592
 
 #define TILE_WIDTH 64
@@ -25,9 +26,12 @@ State::State() : music(BACKGROUND_MUSIC_PATH),
     music.Play(BACKGROUND_MUSIC_LOOPS);
     
     GameObject *background = new GameObject();
+    
+    Sprite *sprite = new Sprite(*background, BACKGROUND_SPRITE_PATH);
+    background->AddComponent((shared_ptr<Sprite>)sprite);
 
-    Sprite *bg_sprite = new Sprite(*background, BACKGROUND_SPRITE_PATH);
-    background->AddComponent((std::shared_ptr<Sprite>)bg_sprite);
+    CameraFollower *camera_follower = new CameraFollower(*background);
+    background->AddComponent((shared_ptr<CameraFollower>)camera_follower);
 
     background->box.x = 0;
     background->box.y = 0;
@@ -36,10 +40,10 @@ State::State() : music(BACKGROUND_MUSIC_PATH),
 
     GameObject *map = new GameObject();
     
-    TileSet *tileSet = new TileSet(*map, TILE_HEIGHT, TILE_WIDTH, MAP_TILESET_PATH);
+    TileSet *tile_set = new TileSet(*map, TILE_HEIGHT, TILE_WIDTH, MAP_TILESET_PATH);
 
-    TileMap *tileMap = new TileMap(*map, MAP_TILEMAP_PATH, tileSet);
-    map->AddComponent((std::shared_ptr<TileMap>)tileMap);
+    TileMap *tile_map = new TileMap(*map, MAP_TILEMAP_PATH, tile_set);
+    map->AddComponent((shared_ptr<TileMap>)tile_map);
 
     map->box.x = 0;
     map->box.y = 0;
@@ -54,7 +58,17 @@ State::~State() {
 }
 
 void State::Update(float delta_time){
-    Input();
+
+    Camera::Update(delta_time);
+
+    if ((InputManager::GetInstance().KeyPress(ESCAPE_KEY)) || (InputManager::GetInstance().QuitRequested()))
+    quitRequested = true;
+    
+    if (InputManager::GetInstance().KeyPress(SPACEBAR_KEY)) {
+        Vec2 objPos = Vec2(200, 0).GetRotated(-PI + PI * (rand() % 1001) / 500.0) + Vec2(InputManager::GetInstance().GetMouseX(),
+                                                                                         InputManager::GetInstance().GetMouseY());
+        AddObject((int)objPos.x - Camera::pos.x, (int)objPos.y - Camera::pos.y);
+    }
 
     for (int i = (int)objectArray.size() - 1; i >= 0; --i) {
         objectArray[i]->Update(delta_time);
@@ -126,6 +140,5 @@ void State::AddObject(int mouseX, int mouseY) {
     enemy->box.x = mouseX - (enemy_sprite->GetWidth()) / 2;
     enemy->box.y = mouseY - (enemy_sprite->GetHeight()) / 2;
 
-    // Adicionando o inimigo no objectArray
     objectArray.emplace_back(enemy);
 }

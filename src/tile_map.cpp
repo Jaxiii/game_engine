@@ -1,4 +1,5 @@
 #include "../include/internal/tile_map.hpp"
+#include "../include/internal/camera.hpp"
 
 TileMap::TileMap(GameObject &associated, string file, TileSet *tileSet) : Component::Component(associated),
                                                                                tileSet(tileSet) {
@@ -10,8 +11,9 @@ void TileMap::Load(string file) {
     char separator;
     ifstream file_object;
     file_object.open(file.c_str());
-    if (file_object)file_object >> mapWidth >> separator >> mapHeight >> separator >> mapDepth >> separator;
-
+    if (file_object) {
+        file_object >> mapWidth >> separator >> mapHeight >> separator >> mapDepth >> separator;
+    }
     for (int i = 0; i < (mapWidth * mapHeight * mapDepth); i++) {
         file_object >> tile >> separator;
         tileMatrix.push_back(tile-1);
@@ -33,15 +35,15 @@ void TileMap::RenderLayer(int layer, int cameraX, int cameraY) {
     for (int x = 0; x < mapWidth; x++) {
         for (int y = 0; y < mapHeight; y++) {
             tileSet->RenderTile(At(x, y, layer),
-                                (float)(x * tileSet->GetTileWidth()), 
-                                (float)(y * tileSet->GetTileHeight()));
+                                (float)((x + cameraX * layer * 0.25) * tileSet->GetTileWidth()),
+                                (float)((y + cameraY * layer * 0.25) * tileSet->GetTileHeight()));
         }
     }
 }
 
 void TileMap::Render() {
     for (int i = 0; i < mapDepth; i++) {   
-        RenderLayer(i);
+        RenderLayer(i, Camera::pos.x, Camera::pos.y);
     }
 }
 
