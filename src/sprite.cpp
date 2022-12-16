@@ -46,8 +46,17 @@ void Sprite::Render() {
     SDL_Rect dstLoc = {int(associated.box.x), int(associated.box.y), clipRect.w, clipRect.h};
 
     RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
-    if (RENDER_ERROR != 0) cout << "Falha ao renderizar a textura: " << SDL_GetError() << endl;
+    if (RENDER_ERROR != 0) cout << "Error - Render Texture" << SDL_GetError() << endl;
     
+}
+
+void Sprite::Render(int x, int y) {
+    int RENDER_ERROR;
+    SDL_Rect dstLoc = {x, y, clipRect.w, clipRect.h};
+
+    RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
+    if (RENDER_ERROR != 0) cout << "Error - Render Texture" << SDL_GetError() << endl;
+
 }
 
 int Sprite::GetWidth(){

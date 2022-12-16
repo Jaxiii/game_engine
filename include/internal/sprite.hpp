@@ -11,24 +11,25 @@ using namespace std;
 class Sprite : public Component {
   
   public:
-    Sprite(string file);
+    Sprite(std::string file);
     Sprite(GameObject &associated);
-    Sprite(GameObject &associated, string file);
+    Sprite(GameObject &associated, std::string file);
     ~Sprite();
-    void Open(string file);
+    void Open(std::string file);
     void SetClip(int x, int y,
                 int w, int h);
     void Render();
+    void Render(int x, int y);
     int GetWidth();
     int GetHeight();
     bool IsOpen();
-    void Update(float delta_time);
-    bool Is(string type);
+    void Update(float dt);
+    bool Is(std::string type);
 
   private:
     SDL_Texture *texture;
     int width;
     int height;
     SDL_Rect clipRect;
-
+    
 };

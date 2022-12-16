@@ -1,3 +1,6 @@
+#ifndef STATE_H
+#define STATE_H
+
 #pragma once
 
 #include <vector>
@@ -5,6 +8,9 @@
 #include "sprite.hpp"
 #include "sound.hpp"
 #include "game_object.hpp"
+#include "music.hpp"
+#include "tile_map.hpp"
+#include "tile_set.hpp"
 
 using namespace std;
 
@@ -17,12 +23,12 @@ class State {
     void Render();
 
   private:
-    GameObject background;
-    Sprite *bg_sprite;
-    Sound *bg_sound;
+    Music music;
     bool quitRequested;
     void Input();
     void AddObject(int mouseX, int mouseY);
     vector<shared_ptr<GameObject>> objectArray;
 
 };
+
+#endif
