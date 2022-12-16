@@ -12,41 +12,26 @@ class GameObject;
 #include "rect.hpp"
 #include "component.hpp"
 
+using namespace std;
 
+class Component;
 
-class GameObject
-{
-private:
+class GameObject {
+  public:
+    GameObject();
+    ~GameObject();
+    void Update(float delta_time);
+    void Render();
+    bool IsDead();
+    void RequestDelete();
+    void AddComponent(shared_ptr<Component> component);
+    void RemoveComponent(shared_ptr<Component> component);
+    shared_ptr<Component> GetComponent(string type);
+    Rect box;
 
-  std::vector <std::unique_ptr<Component>> components;
-
-  bool isDead;
-
-public:
-
-  bool started;
-
-  GameObject();
-
-  ~GameObject();
-
-  void Update(float dt);
-
-  void Render();
-
-  bool IsDead();
-
-  void Start();
-
-  void RequestDelete();
-
-  void AddComponent(Component *cpt);
-
-  void RemoveComponent(Component *cpt);
-
-  Component* GetComponent(std::string type);
-  
-  Rect box;
+  private:
+    vector<shared_ptr<Component>> components;
+    bool isDead;
 };
 
 #endif

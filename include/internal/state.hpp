@@ -7,22 +7,37 @@
 //
 //
 //  MIT LICENSE
+class State;
+#ifndef _STATE_H_
+#define _STATE_H_
 
+#include "game_object.hpp"
 #include "sprite.hpp"
 #include "music.hpp"
+#include "sound.hpp"
+
+using namespace std;
+
+class GameObject;
 
 class State { 
 
     private:
         bool quitRequested;
-        Sprite background;
-        Music music;
+        GameObject background;
+        Sprite *sprite;
+        Sound *sound;
+        void Input();
+        void AddObject(int mouseX, int mouseY);
+        vector<shared_ptr<GameObject>> objectArray;
 
     public:
         State();
+        ~State();
         bool QuitRequested();
-        void LoadAssets();
         void Update(float delta_time);
         void Render();
 
 };
+
+#endif

@@ -3,12 +3,12 @@
 
 using namespace std;
 
-Sprite::Sprite() {
+
+Sprite::Sprite(GameObject &associated) : Component::Component(associated) {
     texture = nullptr;
 }
 
-Sprite::Sprite(string file) {
-    texture = nullptr;
+Sprite::Sprite(GameObject &associated, string file) : Sprite(associated) {
     Open(file);
 }
 
@@ -45,20 +45,14 @@ void Sprite::SetClip(int x, int y, int w, int h) {
     clipRect.h = h;
 }
 
-void Sprite::Render(int x, int y) {
+void Sprite::Render() {
     int RENDER_ERROR;
-    SDL_Rect dstLoc = {x, y, GetWidth(), GetHeight()};
-    
-    RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), 
-                                  texture,
-                                  &clipRect, 
-                                  &dstLoc);
+    SDL_Rect dstLoc = {int(associated.box.x), int(associated.box.y), clipRect.w, clipRect.h};
 
-    if (RENDER_ERROR != 0) 
-        cout << "Error - Texture Render: " 
-             << SDL_GetError() 
-             << endl;
-    
+    RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
+    if (RENDER_ERROR != 0) {
+        cout << "Falha ao renderizar a textura: " << SDL_GetError() << endl;
+    }
 }
 
 int Sprite::GetWidth() {
@@ -73,4 +67,11 @@ bool Sprite::IsOpen() {
     bool isOpen;
     texture != nullptr ? isOpen = true : isOpen = false;
     return isOpen;
+}
+
+void Sprite::Update(float delta_time) {
+}
+
+bool Sprite::Is(string type) {
+   return type == "Sprite" ? true : false;
 }

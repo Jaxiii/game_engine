@@ -473,7 +473,12 @@ dep/sprite.d bin/sprite.o: src/sprite.cpp \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
-  /usr/local/include/SDL2/SDL_misc.h src/../include/internal/game.hpp \
+  /usr/local/include/SDL2/SDL_misc.h \
+  src/../include/internal/game_object.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/component.hpp src/../include/internal/game.hpp \
   src/../include/internal/SDL_include.hpp \
   src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h \
@@ -493,7 +498,8 @@ dep/sprite.d bin/sprite.o: src/sprite.cpp \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/SDL.h \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/begin_code.h \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/close_code.h \
-  src/../include/internal/state.hpp src/../include/internal/music.hpp
+  src/../include/internal/state.hpp src/../include/internal/music.hpp \
+  src/../include/internal/sound.hpp
 
 src/../include/internal/sprite.hpp:
 
@@ -1449,6 +1455,18 @@ src/../include/internal/sprite.hpp:
 
 /usr/local/include/SDL2/SDL_misc.h:
 
+src/../include/internal/game_object.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer:
+
+src/../include/internal/rect.hpp:
+
+src/../include/internal/vec2.hpp:
+
+src/../include/internal/component.hpp:
+
 src/../include/internal/game.hpp:
 
 src/../include/internal/SDL_include.hpp:
@@ -1492,3 +1510,5 @@ src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2
 src/../include/internal/state.hpp:
 
 src/../include/internal/music.hpp:
+
+src/../include/internal/sound.hpp:

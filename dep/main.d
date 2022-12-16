@@ -494,8 +494,14 @@ dep/main.d bin/main.o: src/main.cpp \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/SDL.h \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/begin_code.h \
   src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2/include/close_code.h \
-  src/../include/internal/state.hpp src/../include/internal/sprite.hpp \
-  /usr/local/include/SDL2/SDL.h src/../include/internal/music.hpp
+  src/../include/internal/state.hpp \
+  src/../include/internal/game_object.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/component.hpp \
+  src/../include/internal/sprite.hpp /usr/local/include/SDL2/SDL.h \
+  src/../include/internal/music.hpp src/../include/internal/sound.hpp
 
 src/../include/internal/SDL_include.hpp:
 
@@ -1489,8 +1495,22 @@ src/../include/internal/../external/SDL_ttf-release-2.20.1/../SDL-release-2.24.2
 
 src/../include/internal/state.hpp:
 
+src/../include/internal/game_object.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer:
+
+src/../include/internal/rect.hpp:
+
+src/../include/internal/vec2.hpp:
+
+src/../include/internal/component.hpp:
+
 src/../include/internal/sprite.hpp:
 
 /usr/local/include/SDL2/SDL.h:
 
 src/../include/internal/music.hpp:
+
+src/../include/internal/sound.hpp:

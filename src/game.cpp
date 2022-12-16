@@ -23,8 +23,8 @@ Game::Game(string title, int width, int height) {
                                                                 
 
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0) {
-        cout << "[#2] SDL_Init Error -> Return != 0";//////////////
-    }///////////////////////////////////////////////////////////////
+        cout << "[#2] SDL_Init Error -> Return != 0";
+    }
 
     else {
         if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0) {
@@ -81,11 +81,9 @@ State& Game::GetState() {
 }
 
 void Game::Run() {
-    state->LoadAssets();
     while (state->QuitRequested()!=true) {
-        state->Update(0.0);
+        state->Update(33);
         state->Render();
         SDL_RenderPresent(renderer);
-        SDL_Delay(33);
     }
 }
