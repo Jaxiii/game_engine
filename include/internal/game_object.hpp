@@ -15,6 +15,7 @@ class GameObject {
   public:
     GameObject();
     ~GameObject();
+    void Start();
     void Update(float delta_time);
     void Render();
     bool IsDead();
@@ -23,6 +24,7 @@ class GameObject {
     void RemoveComponent(shared_ptr<Component> component);
     shared_ptr<Component> GetComponent(string type);
     Rect box;
+    bool started;
 
   private:
     vector<shared_ptr<Component>> components;

@@ -21,10 +21,11 @@
 
 
 State::State() : music(BACKGROUND_MUSIC_PATH),
-                 quitRequested(false)
+                 quitRequested(false),
+                 started(false)
 {   
     music.Play(BACKGROUND_MUSIC_LOOPS);
-    
+        
     GameObject *background = new GameObject();
     
     Sprite *sprite = new Sprite(*background, BACKGROUND_SPRITE_PATH);
@@ -57,26 +58,22 @@ State::~State() {
     objectArray.clear();
 }
 
+void State::LoadAssets(){}
+
+void State::Start() {
+    LoadAssets();
+    for (int i = 0; i < (int)objectArray.size(); i++) {
+        objectArray[i]->Start();
+    }
+    started = true;
+}
+
 void State::Update(float delta_time){
 
     Camera::Update(delta_time);
 
     if ((InputManager::GetInstance().KeyPress(ESCAPE_KEY)) || (InputManager::GetInstance().QuitRequested()))
     quitRequested = true;
-    
-
-    if (InputManager::GetInstance().KeyPress(SPACEBAR_KEY)) {
-        int mouseX = InputManager::GetInstance().GetMouseX();
-        int mouseY = InputManager::GetInstance().GetMouseY();
-        float rotation = -PI + PI * (rand() % 1001) / 500.0;
-
-        Vec2 objPos = Vec2(200, 0).GetRotated(rotation) + Vec2(mouseX, mouseY);
-
-        int new_x = (int)objPos.x - Camera::pos.x;
-        int new_y = (int)objPos.y - Camera::pos.y;
-
-        AddObject(new_x, new_y);
-    }
 
     for (int i = (int)objectArray.size() - 1; i >= 0; --i) {
         objectArray[i]->Update(delta_time);
@@ -99,54 +96,26 @@ bool State::QuitRequested() {
     return quitRequested;
 }
 
-void State::Input() {
-    SDL_Event event;
-    int mouseX, mouseY;
+weak_ptr<GameObject>  State::AddObject(GameObject* game_object) {
 
-    SDL_GetMouseState(&mouseX, &mouseY);
+    shared_ptr<GameObject> shared_game_object(game_object);
 
-    while (SDL_PollEvent(&event)) {
-        if (event.type == SDL_QUIT) quitRequested = true;
-    
-        if (event.type == SDL_MOUSEBUTTONDOWN) {
-            for (int i = int(objectArray.size()) - 1; i >= 0; --i) {
-                GameObject *go = (GameObject *)objectArray[i].get();
-                if (go->box.Contains(float(mouseX), float(mouseY))) {
-                    Face *face = (Face *)go->GetComponent("Face").get();
-                    if (nullptr != face) {
-                        int damage = rand() % 10 + 10;
-                        cout << "Damage on Target: " << damage << endl;
-                        face->Damage(damage);
-                        break;
-                    }
-                }
-            }
-        }
-        if (event.type == SDL_KEYDOWN) {
-            if (event.key.keysym.sym == SDLK_ESCAPE) {
-                quitRequested = true;
-            } else {
-                Vec2 objPos = Vec2(200, 0).GetRotated(-PI + PI * (rand() % 1001) / 500.0) + Vec2(mouseX, mouseY);
-                AddObject((int)objPos.x, (int)objPos.y);
-            }
-        }
-    }
+    objectArray.push_back(shared_game_object);
+
+    if (started) shared_game_object->Start();
+
+    weak_ptr<GameObject> weak_game_object(shared_game_object);
+
+    return weak_game_object;
 }
 
-void State::AddObject(int mouseX, int mouseY) {
-    GameObject *enemy = new GameObject();
-    
-    Sprite *enemy_sprite = new Sprite(*enemy, ENEMY_SPRITE_PATH);
-    enemy->AddComponent((shared_ptr<Sprite>)enemy_sprite);
-    
-    Sound *enemy_sound = new Sound(*enemy, ENEMY_SOUND_PATH);
-    enemy->AddComponent((shared_ptr<Sound>)enemy_sound);
-    
-    Face *enemy_interface = new Face(*enemy);
-    enemy->AddComponent((shared_ptr<Face>)enemy_interface);
-
-    enemy->box.x = mouseX - (enemy_sprite->GetWidth()) / 2;
-    enemy->box.y = mouseY - (enemy_sprite->GetHeight()) / 2;
-
-    objectArray.emplace_back(enemy);
+weak_ptr<GameObject> State::GetObjectPtr(GameObject *game_object) {
+    for (int i = 0; i < (int)objectArray.size(); i++) {
+        if (game_object == objectArray[i].get()) {
+            weak_ptr<GameObject> weak_game_object(objectArray[i]);
+            return weak_game_object;
+        }
+    }
+    weak_ptr<GameObject> empty_weak;
+    return empty_weak;
 }

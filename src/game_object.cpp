@@ -8,6 +8,13 @@ GameObject::~GameObject() {
     components.clear();
 }
 
+void GameObject::Start() {
+    for (int i = 0; i < (int)components.size(); i++) {
+        components[i]->Start();
+    }
+    started = true;
+}
+
 void GameObject::Update(float delta_time){   
     for (int i = components.size() - 1; i >= 0; --i) {
         components[i]->Update(delta_time);

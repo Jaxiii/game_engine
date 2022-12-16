@@ -19,17 +19,20 @@ class State {
   public:
     State();
     ~State();
+    void LoadAssets();
+    void Start();
     bool QuitRequested();
     void Update(float delta_time);
     void Render();
-
+    weak_ptr<GameObject> AddObject(GameObject *game_object);
+    weak_ptr<GameObject> GetObjectPtr(GameObject *game_object);
+  
   private:
     Music music;
     bool quitRequested;
+    bool started;
     void Input();
-    void AddObject(int mouseX, int mouseY);
     vector<shared_ptr<GameObject>> objectArray;
-
 };
 
 #endif
