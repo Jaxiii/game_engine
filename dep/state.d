@@ -486,7 +486,8 @@ dep/state.d bin/state.o: src/state.cpp src/../include/internal/state.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  src/../include/internal/rect.hpp src/../include/internal/sound.hpp \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/sound.hpp \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/SDL_mixer.h \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_stdinc.h \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_rwops.h \
@@ -503,7 +504,7 @@ dep/state.d bin/state.o: src/state.cpp src/../include/internal/state.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   src/../include/internal/tile_set.hpp \
   src/../include/internal/camera_follower.hpp \
-  src/../include/internal/face.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/face.hpp \
   src/../include/internal/input_manager.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/is_transparent.h \
@@ -1491,6 +1492,8 @@ src/../include/internal/game_object.hpp:
 
 src/../include/internal/rect.hpp:
 
+src/../include/internal/vec2.hpp:
+
 src/../include/internal/sound.hpp:
 
 src/../include/internal/../external/SDL_mixer-release-2.6.2/include/SDL_mixer.h:
@@ -1528,8 +1531,6 @@ src/../include/internal/tile_set.hpp:
 src/../include/internal/camera_follower.hpp:
 
 src/../include/internal/face.hpp:
-
-src/../include/internal/vec2.hpp:
 
 src/../include/internal/input_manager.hpp:
 

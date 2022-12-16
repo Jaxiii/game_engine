@@ -416,7 +416,8 @@ dep/game_object.d bin/game_object.o: src/game_object.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  src/../include/internal/rect.hpp src/../include/internal/component.hpp
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/component.hpp
 
 src/../include/internal/game_object.hpp:
 
@@ -1253,5 +1254,7 @@ src/../include/internal/game_object.hpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer:
 
 src/../include/internal/rect.hpp:
+
+src/../include/internal/vec2.hpp:
 
 src/../include/internal/component.hpp:

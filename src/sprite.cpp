@@ -72,6 +72,23 @@ int Sprite::GetHeight() {
     return height;
 }
 
+void Sprite::SetScale(float scaleX, float scaleY) {
+    if (scaleX != 0) {
+        scale.x = scaleX;
+        associated.box.w = associated.box.w * scale.x;
+    }
+
+    if (scaleX != 0) {
+        scale.y = scaleY;
+        associated.box.h = associated.box.h * scale.y;
+    }
+}
+
+Vec2 Sprite::GetScale()
+{
+    return scale;
+}
+
 bool Sprite::IsOpen() {
     return texture == nullptr ? false : true;
 }

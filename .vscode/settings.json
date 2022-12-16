@@ -66,7 +66,8 @@
         "fstream": "cpp",
         "iomanip": "cpp",
         "stack": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "queue": "cpp"
     },
     "cmake.configureOnOpen": true,
     "C_Cpp.errorSquiggles": "Disabled"

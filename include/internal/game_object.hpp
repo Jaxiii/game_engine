@@ -25,6 +25,7 @@ class GameObject {
     shared_ptr<Component> GetComponent(string type);
     Rect box;
     bool started;
+    double angleDeg;
 
   private:
     vector<shared_ptr<Component>> components;

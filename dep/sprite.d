@@ -486,8 +486,9 @@ dep/sprite.d bin/sprite.o: src/sprite.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  src/../include/internal/rect.hpp src/../include/internal/game.hpp \
-  src/../include/internal/state.hpp src/../include/internal/sound.hpp \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/game.hpp src/../include/internal/state.hpp \
+  src/../include/internal/sound.hpp \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/SDL_mixer.h \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_stdinc.h \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_rwops.h \
@@ -511,7 +512,7 @@ dep/sprite.d bin/sprite.o: src/sprite.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
-  src/../include/internal/camera.hpp src/../include/internal/vec2.hpp
+  src/../include/internal/camera.hpp
 
 src/../include/internal/sprite.hpp:
 
@@ -1489,6 +1490,8 @@ src/../include/internal/game_object.hpp:
 
 src/../include/internal/rect.hpp:
 
+src/../include/internal/vec2.hpp:
+
 src/../include/internal/game.hpp:
 
 src/../include/internal/state.hpp:
@@ -1544,5 +1547,3 @@ src/../include/internal/resources.hpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional:
 
 src/../include/internal/camera.hpp:
-
-src/../include/internal/vec2.hpp:

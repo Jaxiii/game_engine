@@ -422,7 +422,8 @@ dep/tile_map.d bin/tile_map.o: src/tile_map.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   src/../include/internal/game_object.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
-  src/../include/internal/rect.hpp src/../include/internal/component.hpp \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/component.hpp \
   src/../include/internal/tile_set.hpp \
   src/../include/internal/sprite.hpp \
   src/../include/internal/SDL_include.hpp \
@@ -493,7 +494,7 @@ dep/tile_map.d bin/tile_map.o: src/tile_map.cpp \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL_version.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/begin_code.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/close_code.h \
-  src/../include/internal/camera.hpp src/../include/internal/vec2.hpp
+  src/../include/internal/camera.hpp
 
 src/../include/internal/tile_map.hpp:
 
@@ -1343,6 +1344,8 @@ src/../include/internal/game_object.hpp:
 
 src/../include/internal/rect.hpp:
 
+src/../include/internal/vec2.hpp:
+
 src/../include/internal/component.hpp:
 
 src/../include/internal/tile_set.hpp:
@@ -1486,5 +1489,3 @@ src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.
 src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/close_code.h:
 
 src/../include/internal/camera.hpp:
-
-src/../include/internal/vec2.hpp:

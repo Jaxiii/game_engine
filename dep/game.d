@@ -487,7 +487,8 @@ dep/game.d bin/game.o: src/game.cpp \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/close_code.h \
   src/../include/internal/component.hpp \
   src/../include/internal/game_object.hpp \
-  src/../include/internal/rect.hpp src/../include/internal/sound.hpp \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/sound.hpp \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/SDL_mixer.h \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_stdinc.h \
   src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_rwops.h \
@@ -1492,6 +1493,8 @@ src/../include/internal/component.hpp:
 src/../include/internal/game_object.hpp:
 
 src/../include/internal/rect.hpp:
+
+src/../include/internal/vec2.hpp:
 
 src/../include/internal/sound.hpp:
 

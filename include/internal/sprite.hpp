@@ -25,11 +25,14 @@ class Sprite : public Component {
     bool IsOpen();
     void Update(float dt);
     bool Is(std::string type);
+    void SetScale(float scaleX, float scaleY);
+    Vec2 GetScale();
 
   private:
     SDL_Texture *texture;
     int width;
     int height;
     SDL_Rect clipRect;
+    Vec2 scale;
     
 };

@@ -502,8 +502,9 @@ dep/resources.d bin/resources.o: src/resources.cpp \
   src/../include/internal/sprite.hpp \
   src/../include/internal/component.hpp \
   src/../include/internal/game_object.hpp \
-  src/../include/internal/rect.hpp src/../include/internal/sound.hpp \
-  src/../include/internal/music.hpp src/../include/internal/tile_map.hpp \
+  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
+  src/../include/internal/sound.hpp src/../include/internal/music.hpp \
+  src/../include/internal/tile_map.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
@@ -1521,6 +1522,8 @@ src/../include/internal/component.hpp:
 src/../include/internal/game_object.hpp:
 
 src/../include/internal/rect.hpp:
+
+src/../include/internal/vec2.hpp:
 
 src/../include/internal/sound.hpp:
 
