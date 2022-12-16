@@ -413,10 +413,7 @@ dep/game.d bin/game.o: src/game.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  src/../include/internal/game.hpp src/../include/internal/state.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  src/../include/internal/sprite.hpp \
+  src/../include/internal/game.hpp \
   src/../include/internal/SDL_include.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
   src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h \
@@ -480,6 +477,10 @@ dep/game.d bin/game.o: src/game.cpp \
   src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h \
   src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h \
   src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h \
+  src/../include/internal/state.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
+  src/../include/internal/sprite.hpp \
   src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL_version.h \
@@ -505,6 +506,9 @@ dep/game.d bin/game.o: src/game.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   src/../include/internal/tile_set.hpp \
   src/../include/internal/camera_follower.hpp \
+  src/../include/internal/alien.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
+  src/../include/internal/minion.hpp src/../include/internal/bullet.hpp \
   src/../include/internal/resources.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/is_transparent.h \
@@ -1344,14 +1348,6 @@ dep/game.d bin/game.o: src/game.cpp \
 
 src/../include/internal/game.hpp:
 
-src/../include/internal/state.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer:
-
-src/../include/internal/sprite.hpp:
-
 src/../include/internal/SDL_include.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
@@ -1478,6 +1474,14 @@ src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h:
 
 src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h:
 
+src/../include/internal/state.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer:
+
+src/../include/internal/sprite.hpp:
+
 src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h:
 
 src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL.h:
@@ -1531,6 +1535,14 @@ src/../include/internal/tile_map.hpp:
 src/../include/internal/tile_set.hpp:
 
 src/../include/internal/camera_follower.hpp:
+
+src/../include/internal/alien.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue:
+
+src/../include/internal/minion.hpp:
+
+src/../include/internal/bullet.hpp:
 
 src/../include/internal/resources.hpp:
 

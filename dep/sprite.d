@@ -505,6 +505,9 @@ dep/sprite.d bin/sprite.o: src/sprite.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   src/../include/internal/tile_set.hpp \
   src/../include/internal/camera_follower.hpp \
+  src/../include/internal/alien.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
+  src/../include/internal/minion.hpp src/../include/internal/bullet.hpp \
   src/../include/internal/resources.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/is_transparent.h \
@@ -1531,6 +1534,14 @@ src/../include/internal/tile_map.hpp:
 src/../include/internal/tile_set.hpp:
 
 src/../include/internal/camera_follower.hpp:
+
+src/../include/internal/alien.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue:
+
+src/../include/internal/minion.hpp:
+
+src/../include/internal/bullet.hpp:
 
 src/../include/internal/resources.hpp:
 

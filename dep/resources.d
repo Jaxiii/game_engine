@@ -511,7 +511,10 @@ dep/resources.d bin/resources.o: src/resources.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   src/../include/internal/tile_set.hpp \
-  src/../include/internal/camera_follower.hpp
+  src/../include/internal/camera_follower.hpp \
+  src/../include/internal/alien.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
+  src/../include/internal/minion.hpp src/../include/internal/bullet.hpp
 
 src/../include/internal/resources.hpp:
 
@@ -1544,3 +1547,11 @@ src/../include/internal/tile_map.hpp:
 src/../include/internal/tile_set.hpp:
 
 src/../include/internal/camera_follower.hpp:
+
+src/../include/internal/alien.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue:
+
+src/../include/internal/minion.hpp:
+
+src/../include/internal/bullet.hpp:

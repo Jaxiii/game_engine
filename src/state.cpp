@@ -4,21 +4,6 @@
 #include "../include/internal/vec2.hpp"
 #include "../include/internal/input_manager.hpp"
 #include "../include/internal/camera.hpp"
-#define PI 3.141592
-
-#define TILE_WIDTH 64
-#define TILE_HEIGHT 64
-#define MAP_TILESET_PATH "assets/img/tileset.png"
-#define MAP_TILEMAP_PATH "assets/map/tileMap.txt"
-
-#define BACKGROUND_SPRITE_PATH "assets/img/ocean.jpg"
-#define BACKGROUND_MUSIC_PATH "assets/audio/stageState.ogg"
-#define BACKGROUND_SOUND_PATH "assets/audio/stageState.ogg"
-#define BACKGROUND_MUSIC_LOOPS -1
-
-#define ENEMY_SPRITE_PATH "assets/img/alien.png"
-#define ENEMY_SOUND_PATH "assets/audio/boom.wav"
-
 
 State::State() : music(BACKGROUND_MUSIC_PATH),
                  quitRequested(false),
@@ -50,7 +35,15 @@ State::State() : music(BACKGROUND_MUSIC_PATH),
     map->box.y = 0;
 
     objectArray.emplace_back(map);
+    
+    GameObject *alien = new GameObject();
+    Alien *behaviour = new Alien(*alien, 4);
+    alien->AddComponent((shared_ptr<Alien>)behaviour);
 
+    alien->box.x = 512;
+    alien->box.y = 300;
+
+    objectArray.emplace_back(alien);
 }
 
 

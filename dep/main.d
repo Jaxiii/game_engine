@@ -232,6 +232,95 @@ dep/main.d bin/main.o: src/main.cpp src/../include/internal/game.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/uninitialized_algorithms.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h \
+  src/../include/internal/SDL_include.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_main.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_stdinc.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_config.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_platform.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/begin_code.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_gid_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_setsize.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_set.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_clr.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_zero.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_isset.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_copy.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_assert.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_atomic.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_audio.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_error.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_endian.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mutex.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_thread.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rwops.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_clipboard.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_cpuinfo.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/arm_neon.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_events.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_video.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_pixels.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rect.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_surface.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_blendmode.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keyboard.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keycode.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_scancode.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mouse.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_joystick.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_guid.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gamecontroller.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_sensor.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_quit.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gesture.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_touch.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_filesystem.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_haptic.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hidapi.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hints.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_loadso.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_log.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_messagebox.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_metal.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_power.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_render.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_shape.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_system.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_timer.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h \
+  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h \
   src/../include/internal/state.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit_reference \
@@ -350,95 +439,6 @@ dep/main.d bin/main.o: src/main.cpp src/../include/internal/game.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
   src/../include/internal/sprite.hpp \
-  src/../include/internal/SDL_include.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_main.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_stdinc.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_config.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_platform.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/begin_code.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_gid_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_setsize.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_set.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_clr.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_zero.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_isset.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_copy.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_assert.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_atomic.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_audio.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_error.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_endian.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mutex.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_thread.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rwops.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_clipboard.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_cpuinfo.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/arm_neon.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_events.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_video.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_pixels.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rect.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_surface.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_blendmode.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keyboard.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keycode.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_scancode.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mouse.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_joystick.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_guid.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gamecontroller.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_sensor.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_quit.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gesture.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_touch.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_filesystem.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_haptic.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hidapi.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hints.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_loadso.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_log.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_messagebox.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_metal.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_power.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_render.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_shape.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_system.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_timer.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL.h \
   src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL_version.h \
@@ -504,7 +504,10 @@ dep/main.d bin/main.o: src/main.cpp src/../include/internal/game.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   src/../include/internal/tile_set.hpp \
-  src/../include/internal/camera_follower.hpp
+  src/../include/internal/camera_follower.hpp \
+  src/../include/internal/alien.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
+  src/../include/internal/minion.hpp src/../include/internal/bullet.hpp
 
 src/../include/internal/game.hpp:
 
@@ -974,6 +977,184 @@ src/../include/internal/game.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h:
 
+src/../include/internal/SDL_include.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_main.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_stdinc.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_config.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_platform.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/begin_code.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_gid_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_setsize.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_set.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_clr.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_zero.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_isset.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_copy.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_assert.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_atomic.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_audio.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_error.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_endian.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mutex.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_thread.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rwops.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_clipboard.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_cpuinfo.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/arm_neon.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_events.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_video.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_pixels.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rect.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_surface.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_blendmode.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keyboard.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keycode.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_scancode.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mouse.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_joystick.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_guid.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gamecontroller.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_sensor.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_quit.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gesture.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_touch.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_filesystem.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_haptic.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hidapi.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hints.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_loadso.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_log.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_messagebox.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_metal.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_power.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_render.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_shape.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_system.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_timer.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h:
+
+src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h:
+
 src/../include/internal/state.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
@@ -1210,184 +1391,6 @@ src/../include/internal/state.hpp:
 
 src/../include/internal/sprite.hpp:
 
-src/../include/internal/SDL_include.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_main.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_stdinc.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_config.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_platform.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/begin_code.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_gid_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_setsize.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_set.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_clr.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_zero.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_isset.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_copy.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_assert.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_atomic.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_audio.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_error.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_endian.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mutex.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_thread.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rwops.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_clipboard.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_cpuinfo.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/arm_neon.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_events.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_video.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_pixels.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rect.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_surface.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_blendmode.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keyboard.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keycode.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_scancode.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mouse.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_joystick.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_guid.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gamecontroller.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_sensor.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_quit.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gesture.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_touch.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_filesystem.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_haptic.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hidapi.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hints.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_loadso.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_log.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_messagebox.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_metal.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_power.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_render.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_shape.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_system.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_timer.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h:
-
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h:
-
 src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h:
 
 src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL.h:
@@ -1523,3 +1526,11 @@ src/../include/internal/tile_map.hpp:
 src/../include/internal/tile_set.hpp:
 
 src/../include/internal/camera_follower.hpp:
+
+src/../include/internal/alien.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue:
+
+src/../include/internal/minion.hpp:
+
+src/../include/internal/bullet.hpp:

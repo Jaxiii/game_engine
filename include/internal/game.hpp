@@ -3,8 +3,8 @@
 #define INCLUDE_SDL
 
 #include <memory>
-#include "state.hpp"
 #include "SDL_include.hpp"
+#include "state.hpp"
 
 using namespace std;
 
