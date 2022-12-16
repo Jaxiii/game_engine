@@ -1,6 +1,7 @@
 #include "../include/internal/sprite.hpp"
 #include "../include/internal/game.hpp"
 #include "../include/internal/game_object.hpp"
+#include "../include/internal/resources.hpp"
 
 #define CLIP_START_X 0
 #define CLIP_START_Y 0
@@ -13,14 +14,11 @@ Sprite::Sprite(GameObject &associated, string file) : Sprite(associated) {
     Open(file);
 }
 
-Sprite::~Sprite() {   
-    if (texture != nullptr) SDL_DestroyTexture(texture);
-}
+Sprite::~Sprite() {}
 
 void Sprite::Open(string file) {
-    if (texture != nullptr) SDL_DestroyTexture(texture);
     
-    texture = IMG_LoadTexture(Game::GetInstance().GetRenderer(), file.c_str());
+    texture = Resources::GetImage(file.c_str());
 
     if (texture == nullptr) {
         cout << "Error - Open Sprite" << endl;
@@ -46,7 +44,7 @@ void Sprite::Render() {
     SDL_Rect dstLoc = {int(associated.box.x), int(associated.box.y), clipRect.w, clipRect.h};
 
     RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
-    if (RENDER_ERROR != 0) cout << "Error - Render Texture" << SDL_GetError() << endl;
+    if (RENDER_ERROR != 0) cout << "Error - Render Texture " << SDL_GetError() << endl;
     
 }
 
@@ -55,7 +53,7 @@ void Sprite::Render(int x, int y) {
     SDL_Rect dstLoc = {x, y, clipRect.w, clipRect.h};
 
     RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
-    if (RENDER_ERROR != 0) cout << "Error - Render Texture" << SDL_GetError() << endl;
+    if (RENDER_ERROR != 0) cout << "Error - Render Texture " << SDL_GetError() << endl;
 
 }
 

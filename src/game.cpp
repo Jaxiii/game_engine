@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "../include/internal/game.hpp"
+#include "../include/internal/resources.hpp"
 
 #define WINDOW_FLAGS 0
 
@@ -43,7 +44,7 @@ Game::Game(string title, int width, int height) {
             } else {
                 Mix_OpenAudio(AUDIO_FREQUENCY, AUDIO_FORMAT, AUDIO_CHANNELS, AUDIO_CHUNKSIZE);
                 Mix_AllocateChannels(SOUND_RESOLUTION);
-                
+
                 window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, WINDOW_FLAGS);
                 if (window == nullptr) cout << "Error - SDL_CreateWindow" << endl;
                 
@@ -88,4 +89,7 @@ void Game::Run() {
         state->Render();
         SDL_RenderPresent(Game::GetInstance().GetRenderer());
     }
+    Resources::ClearImages();
+    Resources::ClearMusics();
+    Resources::ClearSounds();
 }
