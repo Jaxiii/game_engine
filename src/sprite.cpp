@@ -1,86 +1,155 @@
-#include "../include/internal/sprite.hpp"
-#include "../include/internal/game.hpp"
-#include "../include/internal/resources.hpp"
-#include "../include/internal/camera.hpp"
+#include "../include/internal/Sprite.h"
+#include "../include/internal/Resources.h"
+#include "../include/internal/Game.h"
+#include "../include/internal/Camera.h"
 
 #define CLIP_START_X 0
 #define CLIP_START_Y 0
 
-Sprite::Sprite(GameObject &associated) : Component::Component(associated) {
+Sprite::Sprite(GameObject &associated) : Component::Component(associated),
+                                         scale(Vec2(1, 1)),
+                                         currentFrame(0),
+                                         timeElapsed(0)
+{
     texture = nullptr;
 }
 
-Sprite::Sprite(GameObject &associated, string file) : Sprite(associated) {
+Sprite::Sprite(GameObject &associated, std::string file, int frameCount, float frameTime, float secondsToSelfDestruct) : Sprite(associated)
+{
+    this->frameTime = frameTime;
+    this->frameCount = frameCount;
+    this->secondsToSelfDestruct = secondsToSelfDestruct;
     Open(file);
 }
 
-Sprite::~Sprite() {}
-
-void Sprite::Open(string file) {
-    
-    texture = Resources::GetImage(file.c_str());
-
-    if (texture == nullptr) {
-        cout << "Error - Open Sprite" << endl;
-    } else {
-        SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
-    }
-
-    SetClip(CLIP_START_X, CLIP_START_Y, width, height);
+Sprite::~Sprite()
+{
 }
 
-void Sprite::SetClip(int x, int y, int w, int h) {
+void Sprite::Open(std::string file)
+{
+    texture = Resources::GetImage(file.c_str());
+    if (texture == nullptr)
+    {
+        std::cout << "Sprite: Falha ao carregar a textura " << file << std::endl;
+    }
+    else
+    {
+        SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
+    }
+    SetClip(CLIP_START_X, CLIP_START_Y, width / frameCount, height);
+}
+
+void Sprite::SetClip(int x, int y, int w, int h)
+{
     clipRect.x = x;
     clipRect.y = y;
     clipRect.w = w;
     clipRect.h = h;
 
-    associated.box.w = w;
-    associated.box.h = h;
+    associated.box.w = w * scale.x;
+    associated.box.h = h * scale.y;
 }
 
-void Sprite::Render() {
+void Sprite::Render()
+{
     int RENDER_ERROR;
-    int new_x = int(associated.box.x) + (int)Camera::pos.x;
-    int new_y = int(associated.box.y) + (int)Camera::pos.y;
-    
-    SDL_Rect dstLoc = {new_x, new_y, clipRect.w, clipRect.h};
+    SDL_Rect dstLoc = {int(associated.box.x) + (int)Camera::pos.x, int(associated.box.y) + (int)Camera::pos.y, (int)(clipRect.w * GetScale().x), (int)(clipRect.h * GetScale().y)};
 
-    RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
-    if (RENDER_ERROR != 0) cout << "Error - Render Texture " << SDL_GetError() << endl;
-    
+    RENDER_ERROR = SDL_RenderCopyEx(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc, associated.angleDeg, nullptr, SDL_FLIP_NONE);
+    if (RENDER_ERROR != 0)
+    {
+        std::cout << "Sprite: Falha ao renderizar a textura: " << SDL_GetError() << std::endl;
+    }
 }
 
-void Sprite::Render(int x, int y) {
+void Sprite::Render(int x, int y)
+{
     int RENDER_ERROR;
-    
-    int new_x = x + (int)Camera::pos.x;
-    int new_y = y + (int)Camera::pos.y;
+    SDL_Rect dstLoc = {(int)(x * GetScale().x) + (int)Camera::pos.x, (int)(y * GetScale().y) + (int)Camera::pos.y, (int)(clipRect.w * GetScale().x), (int)(clipRect.h * GetScale().y)};
 
-    SDL_Rect dstLoc = {new_x, new_y, clipRect.w, clipRect.h};
-
-    RENDER_ERROR = SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc);
-    if (RENDER_ERROR != 0) cout << "Error - Render Texture " << SDL_GetError() << endl;
-
+    RENDER_ERROR = SDL_RenderCopyEx(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstLoc, associated.angleDeg, nullptr, SDL_FLIP_NONE);
+    if (RENDER_ERROR != 0)
+    {
+        std::cout << "Sprite: Falha ao renderizar a textura: " << SDL_GetError() << std::endl;
+    }
 }
 
-int Sprite::GetWidth(){
-    return width;
+int Sprite::GetWidth()
+{   
+    int realWidth = (width * scale.x) / frameCount;
+    return realWidth;
 }
 
-int Sprite::GetHeight() {
+int Sprite::GetHeight()
+{
+    return height * scale.y;
+}
+
+int Sprite::GetWidthNoScale()
+{
+    int realWidth = width / frameCount;
+    return realWidth;
+}
+
+int Sprite::GetHeightNoScale()
+{
     return height;
 }
 
-void Sprite::SetScale(float scaleX, float scaleY) {
-    if (scaleX != 0) {
-        scale.x = scaleX;
-        associated.box.w = associated.box.w * scale.x;
+bool Sprite::IsOpen()
+{
+    std::cout << texture << std::endl;
+    if (texture == nullptr)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+void Sprite::Update(float dt)
+{   
+    if (secondsToSelfDestruct > 0)
+    {
+        selfDestructCount.Update(dt);
+        if (selfDestructCount.Get() >= secondsToSelfDestruct)
+        {
+            associated.RequestDelete();
+        }
     }
 
-    if (scaleX != 0) {
+    timeElapsed += dt;
+    if (timeElapsed >= frameTime)
+    {
+        SetFrame(currentFrame + 1);
+    }
+    if (currentFrame >= frameCount)
+    {
+        SetFrame(0);
+    }
+    
+}
+
+bool Sprite::Is(std::string type)
+{
+    return (type == "Sprite");
+}
+
+void Sprite::SetScale(float scaleX, float scaleY)
+{
+    if (scaleX != 0)
+    {
+        scale.x = scaleX;
+        associated.box.w = clipRect.w * scale.x;
+    }
+    if (scaleX != 0)
+    {
         scale.y = scaleY;
-        associated.box.h = associated.box.h * scale.y;
+        associated.box.h = clipRect.h * scale.y;
+
     }
 }
 
@@ -89,12 +158,25 @@ Vec2 Sprite::GetScale()
     return scale;
 }
 
-bool Sprite::IsOpen() {
-    return texture == nullptr ? false : true;
+void Sprite::SetFrame(int frame)
+{   
+    timeElapsed = 0;
+    currentFrame = frame;
+    SetClip(GetWidthNoScale() * frame, CLIP_START_Y, GetWidthNoScale() , GetHeightNoScale());
 }
 
-void Sprite::Update(float delta_time) {}
-
-bool Sprite::Is(string type) {
-    return type == "Sprite" ? true : false;
+void Sprite::SetFrameCount(int frameCount)
+{
+    this->frameCount = frameCount;
+    SetFrame(0);
+    associated.box.w = GetWidth();
+    associated.box.DefineCenter(associated.box.x, associated.box.y);
 }
+
+void Sprite::SetFrameTime(float frameTime)
+{
+    this->frameTime = frameTime;
+}
+
+void Sprite::NotifyCollision(GameObject &other)
+{}

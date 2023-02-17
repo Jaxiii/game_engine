@@ -1,28 +1,25 @@
-#include <iostream>
-#include "../include/internal/music.hpp"
+#include "../include/internal/Music.h"
+#include "../include/internal/Resources.h"
 
-Music::Music() {
+Music::Music(){
     music = nullptr;
 }
 
-Music::Music(string file) {
+Music::Music(std::string file)
+{
     Open(file);
 }
 
-Music::~Music()  {
-    if (music != nullptr) StopAndFree();
-}
+Music::~Music() 
+{
 
-void Music::StopAndFree() {
-    Stop(1500);
-    Mix_FreeMusic(music);
 }
 
 void Music::Play(int times) {
     if (music != nullptr) {
         Mix_PlayMusic(music, times);
     } else {
-        cout << "Error - Music Play" << endl;
+        std::cout << "Music: Não existe música como atributo na classe";
     }
 }
 
@@ -30,14 +27,21 @@ void Music::Stop(int msToStop) {
     Mix_FadeOutMusic(msToStop);
 }
 
-void Music::Open(string file) {
-    music = Mix_LoadMUS(file.c_str());
-    if(music == nullptr) cout << "Error - Music Open" << endl;
+void Music::Open(std::string file) {
     
+    music = Resources::GetMusic(file.c_str());
+    // music = Mix_LoadMUS(file.c_str());
+    if (music == nullptr) {
+        std::cout << "Music: Falha ao carregar a música!" << std::endl;
+    } else {
+        std::cout << "Music: Musica carregada com sucesso!" << std::endl;
+    }
 }
 
 bool Music::IsOpen() {
-    return music != nullptr 
-        ? true 
-        : false;
+    if (music != nullptr) {
+        return true;
+    } else {
+        return false;
+    }
 }

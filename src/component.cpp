@@ -1,8 +1,14 @@
-#include "../include/internal/component.hpp"
-#include "../include/internal/game_object.hpp"
+#include "../include/internal/Component.h"
+#include "../include/internal/GameObject.h"
 
-Component::Component(GameObject& associated) : associated(associated) {}
+Component::Component(GameObject &associated) : associated(associated)
+{}
 
-Component::~Component() {}
+Component::~Component()
+{}
 
-void Component::Start() {}
+void Component::Start()
+{}
+
+void Component::NotifyCollision(GameObject& other)
+{}

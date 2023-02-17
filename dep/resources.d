@@ -1,5 +1,5 @@
-dep/resources.d bin/resources.o: src/resources.cpp \
-  src/../include/internal/resources.hpp \
+dep/Resources.d bin/Resources.o: src/Resources.cpp \
+  src/../include/internal/Resources.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -422,16 +422,15 @@ dep/resources.d bin/resources.o: src/resources.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
-  src/../include/internal/SDL_include.hpp \
+  src/../include/internal/SDL_include.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_main.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_stdinc.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_config.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_platform.h \
+  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
+  /usr/local/include/SDL2/SDL_stdinc.h \
+  /usr/local/include/SDL2/SDL_config.h \
+  /usr/local/include/SDL2/SDL_platform.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/begin_code.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h \
+  /usr/local/include/SDL2/begin_code.h \
+  /usr/local/include/SDL2/close_code.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h \
@@ -439,84 +438,74 @@ dep/resources.d bin/resources.o: src/resources.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_assert.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_atomic.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_audio.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_error.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_endian.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mutex.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_thread.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rwops.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_clipboard.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_cpuinfo.h \
+  /usr/local/include/SDL2/SDL_assert.h \
+  /usr/local/include/SDL2/SDL_atomic.h \
+  /usr/local/include/SDL2/SDL_audio.h \
+  /usr/local/include/SDL2/SDL_error.h \
+  /usr/local/include/SDL2/SDL_endian.h \
+  /usr/local/include/SDL2/SDL_mutex.h \
+  /usr/local/include/SDL2/SDL_thread.h \
+  /usr/local/include/SDL2/SDL_rwops.h \
+  /usr/local/include/SDL2/SDL_clipboard.h \
+  /usr/local/include/SDL2/SDL_cpuinfo.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/arm_neon.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_events.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_video.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_pixels.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rect.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_surface.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_blendmode.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keyboard.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keycode.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_scancode.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mouse.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_joystick.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_guid.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gamecontroller.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_sensor.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_quit.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gesture.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_touch.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_filesystem.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_haptic.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hidapi.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hints.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_loadso.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_log.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_messagebox.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_metal.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_power.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_render.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_shape.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_system.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_timer.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h \
-  src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h \
-  src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h \
-  src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL.h \
-  src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL_version.h \
-  src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/begin_code.h \
-  src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/close_code.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/SDL_mixer.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_stdinc.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_rwops.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_audio.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_endian.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_version.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/begin_code.h \
-  src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/close_code.h \
-  src/../include/internal/game.hpp src/../include/internal/state.hpp \
+  /usr/local/include/SDL2/SDL_events.h \
+  /usr/local/include/SDL2/SDL_video.h \
+  /usr/local/include/SDL2/SDL_pixels.h \
+  /usr/local/include/SDL2/SDL_rect.h \
+  /usr/local/include/SDL2/SDL_surface.h \
+  /usr/local/include/SDL2/SDL_blendmode.h \
+  /usr/local/include/SDL2/SDL_keyboard.h \
+  /usr/local/include/SDL2/SDL_keycode.h \
+  /usr/local/include/SDL2/SDL_scancode.h \
+  /usr/local/include/SDL2/SDL_mouse.h \
+  /usr/local/include/SDL2/SDL_joystick.h \
+  /usr/local/include/SDL2/SDL_guid.h \
+  /usr/local/include/SDL2/SDL_gamecontroller.h \
+  /usr/local/include/SDL2/SDL_sensor.h \
+  /usr/local/include/SDL2/SDL_quit.h \
+  /usr/local/include/SDL2/SDL_gesture.h \
+  /usr/local/include/SDL2/SDL_touch.h \
+  /usr/local/include/SDL2/SDL_filesystem.h \
+  /usr/local/include/SDL2/SDL_haptic.h \
+  /usr/local/include/SDL2/SDL_hidapi.h \
+  /usr/local/include/SDL2/SDL_hints.h \
+  /usr/local/include/SDL2/SDL_loadso.h /usr/local/include/SDL2/SDL_log.h \
+  /usr/local/include/SDL2/SDL_messagebox.h \
+  /usr/local/include/SDL2/SDL_metal.h \
+  /usr/local/include/SDL2/SDL_power.h \
+  /usr/local/include/SDL2/SDL_render.h \
+  /usr/local/include/SDL2/SDL_shape.h \
+  /usr/local/include/SDL2/SDL_system.h \
+  /usr/local/include/SDL2/SDL_timer.h \
+  /usr/local/include/SDL2/SDL_version.h \
+  /usr/local/include/SDL2/SDL_locale.h \
+  /usr/local/include/SDL2/SDL_misc.h /usr/local/include/SDL2/SDL_image.h \
+  /usr/local/include/SDL2/SDL_mixer.h src/../include/internal/Game.h \
+  src/../include/internal/State.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  src/../include/internal/sprite.hpp \
-  src/../include/internal/component.hpp \
-  src/../include/internal/game_object.hpp \
-  src/../include/internal/rect.hpp src/../include/internal/vec2.hpp \
-  src/../include/internal/sound.hpp src/../include/internal/music.hpp \
-  src/../include/internal/tile_map.hpp \
+  src/../include/internal/Sprite.h src/../include/internal/Component.h \
+  src/../include/internal/GameObject.h src/../include/internal/Rect.h \
+  src/../include/internal/Vec2.h src/../include/internal/Timer.h \
+  src/../include/internal/Music.h src/../include/internal/Sound.h \
+  src/../include/internal/TileMap.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
-  src/../include/internal/tile_set.hpp \
-  src/../include/internal/camera_follower.hpp \
-  src/../include/internal/alien.hpp \
+  src/../include/internal/TileSet.h \
+  src/../include/internal/CameraFollower.h \
+  src/../include/internal/Alien.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
-  src/../include/internal/minion.hpp src/../include/internal/bullet.hpp
+  src/../include/internal/Minion.h src/../include/internal/Bullet.h \
+  src/../include/internal/Collider.h \
+  src/../include/internal/PenguinBody.h \
+  src/../include/internal/PenguinCannon.h \
+  src/../include/internal/Collision.h
 
-src/../include/internal/resources.hpp:
+src/../include/internal/Resources.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:
 
@@ -1362,25 +1351,25 @@ src/../include/internal/resources.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional:
 
-src/../include/internal/SDL_include.hpp:
+src/../include/internal/SDL_include.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL.h:
+/usr/local/include/SDL2/SDL.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_main.h:
+/usr/local/include/SDL2/SDL_main.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_stdinc.h:
+/usr/local/include/SDL2/SDL_stdinc.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_config.h:
+/usr/local/include/SDL2/SDL_config.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_platform.h:
+/usr/local/include/SDL2/SDL_platform.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/begin_code.h:
+/usr/local/include/SDL2/begin_code.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h:
+/usr/local/include/SDL2/close_code.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h:
 
@@ -1396,143 +1385,123 @@ src/../include/internal/../external/SDL-release-2.24.2/include/close_code.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_assert.h:
+/usr/local/include/SDL2/SDL_assert.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_atomic.h:
+/usr/local/include/SDL2/SDL_atomic.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_audio.h:
+/usr/local/include/SDL2/SDL_audio.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_error.h:
+/usr/local/include/SDL2/SDL_error.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_endian.h:
+/usr/local/include/SDL2/SDL_endian.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mutex.h:
+/usr/local/include/SDL2/SDL_mutex.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_thread.h:
+/usr/local/include/SDL2/SDL_thread.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rwops.h:
+/usr/local/include/SDL2/SDL_rwops.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_clipboard.h:
+/usr/local/include/SDL2/SDL_clipboard.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_cpuinfo.h:
+/usr/local/include/SDL2/SDL_cpuinfo.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/arm_neon.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_events.h:
+/usr/local/include/SDL2/SDL_events.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_video.h:
+/usr/local/include/SDL2/SDL_video.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_pixels.h:
+/usr/local/include/SDL2/SDL_pixels.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_rect.h:
+/usr/local/include/SDL2/SDL_rect.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_surface.h:
+/usr/local/include/SDL2/SDL_surface.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_blendmode.h:
+/usr/local/include/SDL2/SDL_blendmode.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keyboard.h:
+/usr/local/include/SDL2/SDL_keyboard.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_keycode.h:
+/usr/local/include/SDL2/SDL_keycode.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_scancode.h:
+/usr/local/include/SDL2/SDL_scancode.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_mouse.h:
+/usr/local/include/SDL2/SDL_mouse.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_joystick.h:
+/usr/local/include/SDL2/SDL_joystick.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_guid.h:
+/usr/local/include/SDL2/SDL_guid.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gamecontroller.h:
+/usr/local/include/SDL2/SDL_gamecontroller.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_sensor.h:
+/usr/local/include/SDL2/SDL_sensor.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_quit.h:
+/usr/local/include/SDL2/SDL_quit.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_gesture.h:
+/usr/local/include/SDL2/SDL_gesture.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_touch.h:
+/usr/local/include/SDL2/SDL_touch.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_filesystem.h:
+/usr/local/include/SDL2/SDL_filesystem.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_haptic.h:
+/usr/local/include/SDL2/SDL_haptic.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hidapi.h:
+/usr/local/include/SDL2/SDL_hidapi.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_hints.h:
+/usr/local/include/SDL2/SDL_hints.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_loadso.h:
+/usr/local/include/SDL2/SDL_loadso.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_log.h:
+/usr/local/include/SDL2/SDL_log.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_messagebox.h:
+/usr/local/include/SDL2/SDL_messagebox.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_metal.h:
+/usr/local/include/SDL2/SDL_metal.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_power.h:
+/usr/local/include/SDL2/SDL_power.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_render.h:
+/usr/local/include/SDL2/SDL_render.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_shape.h:
+/usr/local/include/SDL2/SDL_shape.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_system.h:
+/usr/local/include/SDL2/SDL_system.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_timer.h:
+/usr/local/include/SDL2/SDL_timer.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_version.h:
+/usr/local/include/SDL2/SDL_version.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_locale.h:
+/usr/local/include/SDL2/SDL_locale.h:
 
-src/../include/internal/../external/SDL-release-2.24.2/include/SDL_misc.h:
+/usr/local/include/SDL2/SDL_misc.h:
 
-src/../include/internal/../external/SDL_image-release-2.6.2/SDL_image.h:
+/usr/local/include/SDL2/SDL_image.h:
 
-src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL.h:
+/usr/local/include/SDL2/SDL_mixer.h:
 
-src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/SDL_version.h:
+src/../include/internal/Game.h:
 
-src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/begin_code.h:
-
-src/../include/internal/../external/SDL_image-release-2.6.2/../SDL-release-2.24.2/include/close_code.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/SDL_mixer.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_stdinc.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_rwops.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_audio.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_endian.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/SDL_version.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/begin_code.h:
-
-src/../include/internal/../external/SDL_mixer-release-2.6.2/include/../../SDL-release-2.24.2/include/close_code.h:
-
-src/../include/internal/game.hpp:
-
-src/../include/internal/state.hpp:
+src/../include/internal/State.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer:
 
-src/../include/internal/sprite.hpp:
+src/../include/internal/Sprite.h:
 
-src/../include/internal/component.hpp:
+src/../include/internal/Component.h:
 
-src/../include/internal/game_object.hpp:
+src/../include/internal/GameObject.h:
 
-src/../include/internal/rect.hpp:
+src/../include/internal/Rect.h:
 
-src/../include/internal/vec2.hpp:
+src/../include/internal/Vec2.h:
 
-src/../include/internal/sound.hpp:
+src/../include/internal/Timer.h:
 
-src/../include/internal/music.hpp:
+src/../include/internal/Music.h:
 
-src/../include/internal/tile_map.hpp:
+src/../include/internal/Sound.h:
+
+src/../include/internal/TileMap.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream:
 
@@ -1544,14 +1513,22 @@ src/../include/internal/tile_map.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip:
 
-src/../include/internal/tile_set.hpp:
+src/../include/internal/TileSet.h:
 
-src/../include/internal/camera_follower.hpp:
+src/../include/internal/CameraFollower.h:
 
-src/../include/internal/alien.hpp:
+src/../include/internal/Alien.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue:
 
-src/../include/internal/minion.hpp:
+src/../include/internal/Minion.h:
 
-src/../include/internal/bullet.hpp:
+src/../include/internal/Bullet.h:
+
+src/../include/internal/Collider.h:
+
+src/../include/internal/PenguinBody.h:
+
+src/../include/internal/PenguinCannon.h:
+
+src/../include/internal/Collision.h:

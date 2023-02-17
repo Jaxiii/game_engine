@@ -1,114 +1,176 @@
-#include "../include/internal/state.hpp"
-#include "../include/internal/game_object.hpp"
-#include "../include/internal/face.hpp"
-#include "../include/internal/vec2.hpp"
-#include "../include/internal/input_manager.hpp"
-#include "../include/internal/camera.hpp"
+#include "../include/internal/State.h"
+#include "../include/internal/GameObject.h"
+#include "../include/internal/Face.h"
+#include "../include/internal/Vec2.h"
+#include "../include/internal/InputManager.h"
+#include "../include/internal/Camera.h"
 
 State::State() : music(BACKGROUND_MUSIC_PATH),
                  quitRequested(false),
                  started(false)
 {   
-    music.Play(BACKGROUND_MUSIC_LOOPS);
-        
+    music.Play(BACKGROUND_MUSIC_LOOP_TIMES);
+    LoadAssets();
+
+    // GameObject BACKGROUND
+    // ====================================================
     GameObject *background = new GameObject();
-    
-    Sprite *sprite = new Sprite(*background, BACKGROUND_SPRITE_PATH);
-    background->AddComponent((shared_ptr<Sprite>)sprite);
+    // Criando o sprite do background
+    Sprite *bg_sprite = new Sprite(*background, BACKGROUND_SPRITE_PATH);
+    background->AddComponent((std::shared_ptr<Sprite>)bg_sprite);
+    // Criando o camera follower do background
+    CameraFollower *bg_cmrFollower = new CameraFollower(*background);
+    background->AddComponent((std::shared_ptr<CameraFollower>)bg_cmrFollower);
 
-    CameraFollower *camera_follower = new CameraFollower(*background);
-    background->AddComponent((shared_ptr<CameraFollower>)camera_follower);
+    // Adicionando o background no objectArray
+    AddObject(background);
 
-    background->box.x = 0;
-    background->box.y = 0;
-
-    objectArray.emplace_back(background);
-
+    // GameObject MAP
+    // ====================================================
     GameObject *map = new GameObject();
-    
-    TileSet *tile_set = new TileSet(*map, TILE_HEIGHT, TILE_WIDTH, MAP_TILESET_PATH);
+    // Criando o tileSet para o tileMap
+    TileSet *tileSet = new TileSet(*map, TILE_HEIGHT, TILE_WIDTH, MAP_TILESET_PATH);
+    // Criando o tileMap
+    TileMap *tileMap = new TileMap(*map, MAP_TILEMAP_PATH, tileSet);
+    map->AddComponent((std::shared_ptr<TileMap>)tileMap);
 
-    TileMap *tile_map = new TileMap(*map, MAP_TILEMAP_PATH, tile_set);
-    map->AddComponent((shared_ptr<TileMap>)tile_map);
+    AddObject(map);
 
-    map->box.x = 0;
-    map->box.y = 0;
+    // GameObject PENGUIN
+    // ====================================================
+    GameObject *penguinBody = new GameObject(704, 640);
+    // Adicionando o comportamento do PenguinBody
+    PenguinBody* penguinBody_behaviour = new PenguinBody(*penguinBody);
+    penguinBody->AddComponent((std::shared_ptr<PenguinBody>)penguinBody_behaviour);
 
-    objectArray.emplace_back(map);
-    
-    GameObject *alien = new GameObject();
-    Alien *behaviour = new Alien(*alien, 4);
-    alien->AddComponent((shared_ptr<Alien>)behaviour);
+    std::weak_ptr<GameObject> weak_penguin = AddObject(penguinBody);
 
-    alien->box.x = 512;
-    alien->box.y = 300;
+    // GameObject CANNON PENGUIN
+    // ====================================================
+    GameObject *penguinCannon = new GameObject();
+    // Adicionando o comportamento do PenguinCannon
+    PenguinCannon* penguinCannon_behaviour = new PenguinCannon(*penguinCannon, weak_penguin);
+    penguinCannon->AddComponent((std::shared_ptr<PenguinCannon>)penguinCannon_behaviour);
 
-    objectArray.emplace_back(alien);
+    AddObject(penguinCannon);
+
+    // GameObject ALIEN
+    // ====================================================
+    GameObject *alien = new GameObject(512, 300);
+    // Adicionando o comportamento de Alien
+    Alien *alien_behaviour = new Alien(*alien, 4);
+    alien->AddComponent((std::shared_ptr<Alien>)alien_behaviour);
+
+    AddObject(alien);
 }
 
-
-State::~State() {
+State::~State()
+{
     objectArray.clear();
 }
 
-void State::LoadAssets(){}
+void State::LoadAssets()
+{
+}
 
-void State::Start() {
+void State::Update(float dt)
+{   
+    // É importante que o Update da camera ocorra ANTES da atualização dos objetos
+    // para que o background tenha sua movimentação compensada adequadamente.
+    Camera::Update(dt);
+
+    // Lida com eventos de quit a partir da interface de InputManager
+    if ((InputManager::GetInstance().KeyPress(ESCAPE_KEY)) || (InputManager::GetInstance().QuitRequested()))
+    {
+        quitRequested = true;
+    }
+
+    // Update dos GOs
+    for (int i = (int)objectArray.size() - 1; i >= 0; --i)
+    {
+        objectArray[i]->Update(dt);
+    }
+
+    // Verifica se há colisões
+    std::vector<std::shared_ptr<GameObject>> objWithCollider;
+    for (int i = (int)objectArray.size() - 1; i >= 0; i--)
+    {   
+        std::shared_ptr<Component> colliderComponent = objectArray[i]->GetComponent("Collider");
+        if (colliderComponent.get() != nullptr)
+        {
+            objWithCollider.push_back(objectArray[i]);
+            for (int j = 0; j < (int)objWithCollider.size(); j++)
+            {
+                if (objectArray[i] != objWithCollider[j])
+                {
+                    if (Collision::IsColliding(objectArray[i]->box, objWithCollider[j]->box, objectArray[i]->GetAngleRad(), objWithCollider[j]->GetAngleRad()))
+                    {
+                        objectArray[i]->NotifyCollision(*objWithCollider[j].get());
+                        objWithCollider[j]->NotifyCollision(*objectArray[i].get());
+                    }
+                }
+            }
+        }
+    }
+
+    // Verifica se algum objeto deve ser deletado depois de ser atualizado
+    for (int i = (int)objectArray.size() - 1; i >= 0; --i)
+    {
+        if (objectArray[i]->IsDead())
+        {
+            objectArray.erase(objectArray.begin() + i);
+        }
+    }
+
+    
+    SDL_Delay(dt);
+}
+
+void State::Render()
+{
+    for (int i = 0; i != (int)objectArray.size(); i++)
+    {
+        objectArray[i]->Render();
+    }
+}
+
+bool State::QuitRequested()
+{
+    return quitRequested;
+}
+
+std::weak_ptr<GameObject> State::AddObject(GameObject* go)
+{
+    std::shared_ptr<GameObject> shared_go(go);
+    objectArray.push_back(shared_go);
+    if (started)
+    {
+        shared_go->Start();
+    }
+    std::weak_ptr<GameObject> weak_go(shared_go);
+    return weak_go;
+}
+
+void State::Start()
+{
     LoadAssets();
-    for (int i = 0; i < (int)objectArray.size(); i++) {
+    for (int i = 0; i < (int)objectArray.size(); i++)
+    {
         objectArray[i]->Start();
     }
     started = true;
 }
 
-void State::Update(float delta_time){
-
-    Camera::Update(delta_time);
-
-    if ((InputManager::GetInstance().KeyPress(ESCAPE_KEY)) || (InputManager::GetInstance().QuitRequested()))
-    quitRequested = true;
-
-    for (int i = (int)objectArray.size() - 1; i >= 0; --i) {
-        objectArray[i]->Update(delta_time);
-    }
-
-    for (int i = (int)objectArray.size() - 1; i >= 0; --i) {
-        if (objectArray[i]->IsDead()) objectArray.erase(objectArray.begin() + i);
-    }
-
-    SDL_Delay(delta_time);
-}
-
-void State::Render() {
-    for (int i = 0; i != (int)objectArray.size(); i++) {
-        objectArray[i]->Render();
-    }
-}
-
-bool State::QuitRequested() {
-    return quitRequested;
-}
-
-weak_ptr<GameObject>  State::AddObject(GameObject* game_object) {
-
-    shared_ptr<GameObject> shared_game_object(game_object);
-
-    objectArray.push_back(shared_game_object);
-
-    if (started) shared_game_object->Start();
-
-    weak_ptr<GameObject> weak_game_object(shared_game_object);
-
-    return weak_game_object;
-}
-
-weak_ptr<GameObject> State::GetObjectPtr(GameObject *game_object) {
-    for (int i = 0; i < (int)objectArray.size(); i++) {
-        if (game_object == objectArray[i].get()) {
-            weak_ptr<GameObject> weak_game_object(objectArray[i]);
-            return weak_game_object;
+std::weak_ptr<GameObject> State::GetObjectPtr(GameObject *go)
+{
+    for (int i = 0; i < (int)objectArray.size(); i++)
+    {
+        if (go == objectArray[i].get())
+        {
+            std::weak_ptr<GameObject> weak_go(objectArray[i]);
+            return weak_go;
         }
     }
-    weak_ptr<GameObject> empty_weak;
+    std::weak_ptr<GameObject> empty_weak;
     return empty_weak;
 }
